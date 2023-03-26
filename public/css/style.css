@@ -1,0 +1,74 @@
+html,body {
+    background-color:rgb(255, 111, 0);
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.cage {
+    padding-top: 3%;
+}
+
+.border-gone {
+    border:0ch;
+}
+
+.flex {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center; /* center vertically */
+    flex-wrap: wrap;
+    gap: 1em;
+    top: 50%; /* remove this line */
+    left: 0%; /* remove this line */
+    margin-bottom: 5em;
+}
+
+.flex-4 {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center; /* center vertically */
+    flex-wrap: wrap;
+    gap: 1em;
+    top: 50%; /* remove this line */
+    left: 0%; /* remove this line */
+    margin-bottom: 1em;
+}
+  
+
+.white-box {
+    background-color: white;
+    color: black;
+}
+
+.card {
+    border-radius: 35px;
+}
+
+.card-image {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+@media screen and (max-width: 600px) {
+    .order {
+        visibility: hidden;
+        clear: both;
+        float: left;
+        margin: 10px auto 5px 20px;
+        width: 28%;
+        display: none;
+    }
+    .cage {
+        padding-top: 6%;
+    }
+}
+
+.yellow {
+    background-color: rgb(235, 173, 79);
+}
+.red {
+    background-color: rgb(203, 103, 103);
+}
+.green {
+    background-color: rgb(128, 184, 104);
+}
