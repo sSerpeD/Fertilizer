@@ -8,6 +8,6 @@ app.set('view engine','ejs')
 app.use(router)
 app.use(express.static(__dirname + '/public'));
 
-app.listen(8080,()=>{
-    console.log("start server at 8080")
+app.listen(3000,()=>{
+    console.log("start server at 3000")
 })

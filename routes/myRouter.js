@@ -30,7 +30,7 @@ router.get("/sugarcane/ref",(req,res)=>{
     res.sendFile(refSugarcanePage)
 })
 
-router.get('/home',(req,res)=>{
+router.get('/',(req,res)=>{
     res.render('index.ejs')
 })
 

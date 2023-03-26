@@ -175,7 +175,7 @@
                   <% if(nRai == "ปุ๋ยเกิน"){ %>
                     ปุ๋ยเกิน
                   <% }else{ %>
-                      <% var plot1 = nRai*(Number(rai)+(ngan*0.25)+(squareWa/400)) %>
+                      <% var plot1 = parseFloat(nRai*(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %>
                   <% } %>
                 <%- plot1 %>
                 </div>
@@ -188,21 +188,21 @@
                   <% if(pRai == "ปุ๋ยเกิน"){ %>
                     ปุ๋ยเกิน
                   <% }else{ %>
-                      <% var plot2 = pRai*(Number(rai)+(ngan*0.25)+(squareWa/400)) %>
+                      <% var plot2 = parseFloat(pRai*(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %>
                   <% } %>
                 <%- plot2 %>
                 </div>
                 <div class="w-100"></div>
                 
                 <div class="col text-success border">
-                  <% var kRai = (K2O-pRai*(pk/100))*100/kk %>
+                  <% var kRai = parseFloat((K2O-pRai*(pk/100))*100/kk).toFixed() %>
                   <%- kRai %>
                 </div>
                 <div class="col text-black border">
                   <% if(kRai == "ปุ๋ยเกิน"){ %>
                     ปุ๋ยเกิน
                   <% }else{ %>
-                      <% var plot3 = kRai*(Number(rai)+(ngan*0.25)+(squareWa/400)) %>
+                      <% var plot3 = parseFloat(kRai*(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %>
                   <% } %>
                 <%- plot3 %>
                 </div>
@@ -374,7 +374,7 @@
                 <p class=""><%= pn %> - <%= pp %> - <%= pk %>&emsp;เป็นเงิน&emsp;<%= Number(sum2) %></p>
                 <p class=""><%= kn %> - <%= kp %> - <%= kk %>&emsp;เป็นเงิน&emsp;<%= Number(sum3) %></p>
                 <p>รวมเป็นเงิน <%= Number(sum1)+Number(sum2_1)+Number(sum2)+Number(sum3) %></p>
-                <p><%= (Number(sum1)+Number(sum2_1)+Number(sum2)+Number(sum3))/(Number(rai)+(ngan*0.25)+(squareWa/400)) %> บาทต่อไร่</p>
+                <p><%= parseFloat((Number(sum1)+Number(sum2_1)+Number(sum2)+Number(sum3))/(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %> บาทต่อไร่</p>
               </div>
             </div>
           </div>
