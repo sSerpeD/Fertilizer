@@ -42,27 +42,10 @@ router.get('/calc',(req,res)=>{
     res.render('calc.ejs')
 })
 
-router.get('/show',(req,res)=>{
-    const pH = req.query.pH
-    const oM = req.query.oM
-    const P = req.query.available_P
-    const K = req.query.ex_K
-    const nn = req.query.nn
-    const np = req.query.np
-    const nk = req.query.nk
-    const pn = req.query.pn
-    const pp = req.query.pp
-    const pk = req.query.pk
-    const kn = req.query.kn
-    const kp = req.query.kp
-    const kk = req.query.kk
-    const rai = req.query.rai
-    const ngan = req.query.ngan
-    const squareWa = req.query.squareWa
-    const price1 = req.query.price1
-    const price2 = req.query.price2
-    const price3 = req.query.price3
-    res.render('show.ejs',{pH:pH,oM:oM,P:P,K:K,nn:nn,np:np,nk:nk,pn:pn,pp:pp,pk:pk,kn:kn,kp:kp,kk:kk,rai:rai,ngan:ngan,squareWa:squareWa,price1:price1,price2:price2,price3:price3})
-})
+router.get('/show', (req, res) => {
+    const { pH, oM, available_P: P, ex_K: K, check, ...otherParams } = req.query;
+    res.render('show.ejs', { pH, oM, P, K, check, ...otherParams });
+});
+  
 
 module.exports = router
