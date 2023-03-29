@@ -39,7 +39,7 @@ router.get("/dirt",(req,res)=>{
 })
 
 router.get('/calc',(req,res)=>{
-    res.render('calc.ejs')
+    res.render('input.ejs')
 })
 
 router.get('/show', (req, res) => {
