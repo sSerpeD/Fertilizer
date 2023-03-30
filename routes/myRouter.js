@@ -38,13 +38,33 @@ router.get("/dirt",(req,res)=>{
     res.render('dirt.ejs')
 })
 
-router.get('/calc',(req,res)=>{
-    res.render('input.ejs')
+router.get('/inputCassava',(req,res)=>{
+    const type = req.query.type;
+    res.render('inputCassava.ejs', {type:type})
 })
 
-router.get('/show', (req, res) => {
-    const { pH, oM, available_P: P, ex_K: K, check, ...otherParams } = req.query;
-    res.render('show.ejs', { pH, oM, P, K, check, ...otherParams });
+router.get('/inputCorn',(req,res)=>{
+    const type = req.query.type;
+    res.render('inputCorn.ejs', {type:type})
+})
+
+router.get('/inputSugarcane',(req,res)=>{
+    res.render('inputSugarcane.ejs')
+})
+
+router.get('/showSugarcane', (req, res) => {
+    const { pH, oM, available_P: P, ex_K: K, ...otherParams } = req.query;
+    res.render('showSugarcane.ejs', { pH, oM, P, K, check, ...otherParams });
+});
+
+router.get('/showCorn', (req, res) => {
+    const { pH, oM, available_P: P, ex_K: K, ...otherParams } = req.query;
+    res.render('showCorn.ejs', { pH, oM, P, K, check, ...otherParams });
+});
+
+router.get('/showCassava', (req, res) => {
+    const { pH, oM, available_P: P, ex_K: K, ...otherParams } = req.query;
+    res.render('showCassava.ejs', { pH, oM, P, K, ...otherParams });
 });
   
 
