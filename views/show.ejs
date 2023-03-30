@@ -222,27 +222,53 @@
                 
                 <div class="col border">
                   <% var sum1 = plot1*(price1/50) %>
-                  <%- sum1 %>
+                  <% const checkSum1 = parseFloat(plotN*(price1/50)).toFixed() %>
+
+                  <% if(!check){ %>
+                    <%- sum1 %>
+                  <% }else{ %>
+                    <%- checkSum1 %>
+                  <% } %>
+                  
                 </div>
                 <div class="col border">บาท</div>
                 <div class="w-100"></div>
                 
                 <div class="col border">
                   <% var sum2 = plot2*(price2/50) %>
-                  <%- sum2 %>
+                  <% const checkSum2 = parseFloat(plotP*(price2/50)).toFixed() %>
+
+                  <% if(!check){ %>
+                    <%- sum2 %>
+                  <% }else{ %>
+                    <%- checkSum2 %>
+                  <% } %>
+
                 </div>
                 <div class="col border">บาท</div>
                 <div class="w-100"></div>
                 
                 <div class="col border">
-                  <% var sum3 =plot3*(price3/50) %>
-                  <%- sum3 %>
+                  <% var sum3 = plot3*(price3/50) %>
+                  <% const checkSum3 = parseFloat(plotK*(price3/50)).toFixed() %>
+
+                  <% if(!check){ %>
+                    <%- sum3 %>
+                  <% }else{ %>
+                    <%- checkSum3 %>
+                  <% } %>
                 </div>
                 <div class="col border">บาท</div>
 
                 <div class="col text-success border">
                   <% var sumAll = sum1+sum2+sum3 %>
-                  <%- sumAll %>
+                  <% const checkSumAll = Number(checkSum1)+Number(checkSum2)+Number(checkSum3) %>
+                  
+                  <% if(!check){ %>
+                    <%- sumAll %>
+                  <% }else{ %>
+                    <%- checkSumAll %>
+                  <% } %>
                 </div>
                 <div class="col text-success border">บาท</div>
               </div>
@@ -367,11 +393,46 @@
               <p class="">รวมพื้นที่&emsp;<%= rai %> ไร่ <%= ngan %> งาน <%= squareWa %> ตารางวา</p>
               <p>จ่ายค่าปุ๋ย</p>
               <div class="text-center">
-                <p class=""><%= nn %> - <%= np %> - <%= nk %>&emsp;เป็นเงิน&emsp;<%= Number(sum1) + Number(sum2_1) %></p>
-                <p class=""><%= pn %> - <%= pp %> - <%= pk %>&emsp;เป็นเงิน&emsp;<%= Number(sum2) %></p>
-                <p class=""><%= kn %> - <%= kp %> - <%= kk %>&emsp;เป็นเงิน&emsp;<%= Number(sum3) %></p>
-                <p>รวมเป็นเงิน <%= Number(sum1)+Number(sum2_1)+Number(sum2)+Number(sum3) %></p>
-                <p><%= parseFloat((Number(sum1)+Number(sum2_1)+Number(sum2)+Number(sum3))/(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %> บาทต่อไร่</p>
+                <p class=""><%= ferN %> - <%= ferP %> - <%= ferK %>&emsp;เป็นเงิน&emsp;
+                  <%- ferCal %>
+                </p>
+                <p class=""><%= nn %> - <%= np %> - <%= nk %>&emsp;เป็นเงิน&emsp;
+                  <% if(!check){ %>
+                    <%= Number(sum1) + Number(sum2_1) %>
+                  <% }else{ %>
+                    <%- checkSum1 %>
+                  <% } %>
+                </p>
+                <p class=""><%= pn %> - <%= pp %> - <%= pk %>&emsp;เป็นเงิน&emsp;
+                  <% if(!check){ %>
+                    <%= Number(sum2) %>
+                  <% }else{ %>
+                    <%- checkSum2 %>
+                  <% } %>
+                </p>
+                <p class=""><%= kn %> - <%= kp %> - <%= kk %>&emsp;เป็นเงิน&emsp;
+                  <% if(!check){ %>
+                    <%= Number(sum3) %>
+                  <% }else{ %>
+                    <%- checkSum3 %>
+                  <% } %>
+                </p>
+                <p>รวมเป็นเงิน 
+                  <% if(!check){ %>
+                    <%= Number(sum1)+Number(sum2_1)+Number(sum2)+Number(sum3) %>
+                  <% }else{ %>
+                    <%- Number(checkSumAll)+Number(ferCal) %>
+                  <% } %>
+                </p>
+                <p>
+                  
+                  <% if(!check){ %>
+                    <%- parseFloat((Number(sum1)+Number(sum2_1)+Number(sum2)+Number(sum3))/(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %> 
+                    <% }else{ %>
+                    <%- (checkSumAll+Number(ferCal))/(Number(rai)+(ngan*0.25)+(squareWa/400)) %>
+                  <% } %>
+                  
+                  บาทต่อไร่</p>
               </div>
             </div>
           </div>
