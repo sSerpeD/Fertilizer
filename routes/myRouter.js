@@ -53,7 +53,7 @@ router.get('/inputSugarcane',(req,res)=>{
 })
 
 router.get('/showSugarcane', (req, res) => {
-    const { pH, oM, available_P: P, ex_K: K, ...otherParams } = req.query;
+    const { pH, oM, available_P: P, ex_K: K, check,...otherParams } = req.query;
     res.render('showSugarcane.ejs', { pH, oM, P, K, check, ...otherParams });
 });
 
