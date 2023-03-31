@@ -59,7 +59,7 @@ router.get('/showSugarcane', (req, res) => {
 
 router.get('/showCorn', (req, res) => {
     const { pH, oM, available_P: P, ex_K: K, ...otherParams } = req.query;
-    res.render('showCorn.ejs', { pH, oM, P, K, check, ...otherParams });
+    res.render('showCorn.ejs', { pH, oM, P, K, ...otherParams });
 });
 
 router.get('/showCassava', (req, res) => {
