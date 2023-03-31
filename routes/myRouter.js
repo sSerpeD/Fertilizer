@@ -34,6 +34,10 @@ router.get('/',(req,res)=>{
     res.render('index.ejs')
 })
 
+router.post('/home',(req,res)=>{
+    res.render('home.ejs')
+})
+
 router.get("/dirt",(req,res)=>{
     res.render('dirt.ejs')
 })
