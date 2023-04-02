@@ -56,9 +56,9 @@
 					<div class="tab-content">
 						<!-- Login Tab Content -->
 						<div class="tab-pane active" id="login">
-							<form action="/home" method="POST">
+							<form action="/login" method="POST">
 								<div class="form-group">
-									<label for="username">ชื่อ</label>
+									<label for="username">เลขบัตรประชาชน</label>
 									<input type="text" class="form-control" id="username" name="username" required>
 								</div>
 								<div class="form-group">
@@ -70,19 +70,24 @@
 						</div>
 						<!-- Register Tab Content -->
 						<div class="tab-pane" id="register">
-							<form action="/home" method="POST">
+							<form action="/register" method="POST" novalidate>
 								<div class="form-group">
-									<label for="new-username">ชื่อ</label>
-									<input type="text" class="form-control" id="new-username" name="new-username" required>
+									<label for="new-username">เลขบัตรประชาชน</label>
+									<input type="text" class="form-control" id="_rcard" name="user_card" value="<%= (locals.old_data) ? old_data.user_card : '' %>" placeholder="เลขบัตรประชาชน" required>
 								</div>
 								<div class="form-group">
 									<label for="new-password">รหัสผ่าน</label>
-									<input type="password" class="form-control" id="new-password" name="new-password" required>
+									<input type="password" class="form-control" id="_rpass" name="user_pass" value="<%= (locals.old_data) ? old_data.user_pass : '' %>" placeholder="รหัสผ่าน" required>
 								</div>
 								<div class="form-group">
 									<label for="confirm-password">ยืนยัน-รหัสผ่าน</label>
-									<input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
+									<input type="password" class="form-control" id="_rcpass" name="user_cpass" placeholder="ยืนยัน-รหัสผ่าน" required>
 								</div>
+								<% if(locals.register_error) {
+									register_error.forEach(function(error_msg) { %>
+									<div class="alert alert-danger" role="alert"><%= error_msg%></div>
+								<% })
+								} %>
 								<button type="submit" class="btn btn-primary">Register</button>
 							</form>
 						</div>

@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const dbConnection = require('../database')
 const router = express.Router()
 
 const refCassavaPage = path.join(__dirname,"../public/ref/cassava.html")
@@ -30,11 +31,11 @@ router.get("/sugarcane/ref",(req,res)=>{
     res.sendFile(refSugarcanePage)
 })
 
-router.get('/',(req,res)=>{
-    res.render('index.ejs')
+router.post('/home',(req,res)=>{
+    res.render('home.ejs')
 })
 
-router.post('/home',(req,res)=>{
+router.get('/home',(req,res)=>{
     res.render('home.ejs')
 })
 
