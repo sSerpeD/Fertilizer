@@ -1,11 +1,14 @@
 const express = require('express')
 const path = require('path')
-const dbConnection = require('../database')
 const router = express.Router()
 
 const refCassavaPage = path.join(__dirname,"../public/ref/cassava.html")
 const refSugarcanePage = path.join(__dirname,"../public/ref/sugarcane.html")
 const refCornPage = path.join(__dirname,"../public/ref/corn.html")
+
+router.get('/',(req,res)=>{
+    res.render('index.ejs')
+})
 
 router.get("/cassava",(req,res)=>{
     res.render('cassava.ejs')
