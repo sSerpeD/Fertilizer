@@ -7,7 +7,7 @@ const refSugarcanePage = path.join(__dirname,"../public/ref/sugarcane.html")
 const refCornPage = path.join(__dirname,"../public/ref/corn.html")
 
 router.get('/',(req,res)=>{
-    res.render('index.ejs')
+    res.render('home.ejs')
 })
 
 router.get("/cassava",(req,res)=>{
