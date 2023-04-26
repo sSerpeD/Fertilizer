@@ -213,67 +213,6 @@
               <br>
             </div>
           </div> 
-          
-          <div class="card border border-0 green" style="width: 20rem;">
-            
-            <div class="container text-center" style="width: 50%;">
-              <br><br>
-              <div class="row" style="background-color: whitesmoke;">
-                
-                <div class="col border">
-                  <% var sum1 = plot1*(price1/50) %>
-                  <% const checkSum1 = parseFloat(plotN*(price1/50)).toFixed() %>
-
-                  <% if(!check){ %>
-                    <%- sum1 %>
-                  <% }else{ %>
-                    <%- checkSum1 %>
-                  <% } %>
-                  
-                </div>
-                <div class="col border">บาท</div>
-                <div class="w-100"></div>
-                
-                <div class="col border">
-                  <% var sum2 = plot2*(price2/50) %>
-                  <% const checkSum2 = parseFloat(plotP*(price2/50)).toFixed() %>
-
-                  <% if(!check){ %>
-                    <%- sum2 %>
-                  <% }else{ %>
-                    <%- checkSum2 %>
-                  <% } %>
-
-                </div>
-                <div class="col border">บาท</div>
-                <div class="w-100"></div>
-                
-                <div class="col border">
-                  <% var sum3 = plot3*(price3/50) %>
-                  <% const checkSum3 = parseFloat(plotK*(price3/50)).toFixed() %>
-
-                  <% if(!check){ %>
-                    <%- sum3 %>
-                  <% }else{ %>
-                    <%- checkSum3 %>
-                  <% } %>
-                </div>
-                <div class="col border">บาท</div>
-
-                <div class="col text-success border">
-                  <% var sumAll = sum1+sum2+sum3 %>
-                  <% const checkSumAll = Number(checkSum1)+Number(checkSum2)+Number(checkSum3) %>
-                  
-                  <% if(!check){ %>
-                    <%- sumAll %>
-                  <% }else{ %>
-                    <%- checkSumAll %>
-                  <% } %>
-                </div>
-                <div class="col text-success border">บาท</div>
-              </div>
-              <div><br></div>
-            </div>
           </div>
 
         </div>
@@ -349,43 +288,21 @@
                 <br>
               </div>
             </div> 
-            
-            <div class="card border border-0 red" style="width: 20rem;">
-              
-              <div class="container text-center" style="width: 50%;">
-                <br><br>
-                <div class="row bg-white">
-                  
-                  <div class="col border">
-                    <% var sum2_1 = plot2_1*(price1/50) %>
-                    <%- sum2_1 %>
-                  </div>
-                  <div class="col border">บาท</div>
-                  <div class="w-100"></div>
-                  
-                  <div class="col border">
-                    -
-                  </div>
-                  <div class="col border">บาท</div>
-                  <div class="w-100"></div>
-                  
-                  <div class="col border">
-                    -
-                  </div>
-                  <div class="col border">บาท</div>
-                  <div class="w-100"></div>
-  
-                  <div class="col text-success border">
-                    <% var sumAll2 = sum2_1 %>
-                    <%- sumAll2 %>
-                  </div>
-                  <div class="col text-success border">บาท</div> 
-                </div>
-                <div><br></div>
-              </div>
-            </div>
           </div>
         <% } %>
+
+        <% var sum1 = plot1*(price1/50) %>
+        <% var sum2 = plot2*(price2/50) %>
+        <% var sum3 = plot3*(price3/50) %>
+        <% var sumAll = sum1+sum2+sum3 %>
+        <% const checkSum1 = parseFloat(plotN*(price1/50)).toFixed() %>
+        <% const checkSum2 = parseFloat(plotP*(price2/50)).toFixed() %>
+        <% const checkSum3 = parseFloat(plotK*(price3/50)).toFixed() %>
+        <% const checkSumAll = Number(checkSum1)+Number(checkSum2)+Number(checkSum3) %>
+        <% const nRai2 = (pRai*pn/100) > N ? "ปุ๋ยเกิน" : ((N/2)-(pRai*pn)/100) < 0 ? (N/2)-((-1)*((N/2)-(pRai*pn)/100)) : (N/2)*100/nn %>
+        <% const plot2_1 = nRai2 == "ปุ๋ยเกิน" ? "ปุ๋ยเกิน" : parseFloat(nRai2*(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %>
+        <% var sum2_1 = plot2_1*(price1/50) %>
+        <% var sumAll2 = sum2_1 %>
 
         <div class="container flex">
           <div class="card border border-dark" style="width: 20rem;">
@@ -437,19 +354,27 @@
             </div>
           </div>
         </div>
-
       </div>
-    </div>
-
-    <br>
-    <button onclick="goBack()" type="button" class="btn btn-lg btn-block rounded mx-auto d-block" style="background-color: rgb(242, 187, 46); margin-bottom: 1em">
-        <a style="text-decoration: none; color: rgb(33, 33, 33);"> <- ย้อนกลับ </a>
-      </button>
-      <script>
+      <div style="display: flex; justify-content: center;">
+        <button onclick="goBack()" type="button" class="btn btn-lg rounded" style="background-color: rgb(242, 187, 46); margin-right: 0.5em;">
+          <a style="text-decoration: none; color: rgb(33, 33, 33);"> <- ย้อนกลับ </a>
+        </button>
+        <script>
           function goBack() {
-          window.history.back();
+            window.history.back();
           }
-      </script>
+        </script>
+      
+        <button type="button" class="btn btn-lg rounded" style="background-color: #2e9df2; margin-left: 0.5em; margin-right: 0.5em;">
+          <a href="/"  style="text-decoration: none; color: rgb(33, 33, 33);"> หน้าแรก </a>
+        </button>
+  
+        <button type="button" class="btn btn-lg rounded" style="background-color: rgb(242, 187, 46); margin-left: 0.5em;">
+          <a href="/sugarcane" style="text-decoration: none; color: rgb(33, 33, 33);"> ต่อไป -> </a>
+        </button>
+      </div>
+      <br>
+    </div>
   </div>
 </body>
 
