@@ -17,13 +17,13 @@
             <div class="col-sm border p-1 border-dark bg-secondary">
               ขั้นตอนที่ 1
             </div>
-            <div class="col-sm border p-1 border-dark" style="background-color: rgb(235, 128, 46);">
+            <div class="col-sm border p-1 border-dark bg-secondary">
               ขั้นตอนที่ 2
             </div>
-            <div class="col-sm border p-1 border-dark">
+            <div class="col-sm border p-1 border-dark bg-secondary">
               ขั้นตอนที่ 3
             </div>
-            <div class="col-sm border p-1 border-dark">
+            <div class="col-sm border p-1 border-dark" style="background-color: rgb(235, 128, 46);">
               ขั้นตอนที่ 4
             </div>
           </div>
@@ -31,14 +31,7 @@
       <img src="img/1.png" class="img-fluid rounded mx-auto d-block p-1" alt="Banner" style="max-height: 150px; max-width: 150px;">
       <h4 class="text-center p-4">มันสำปะหลัง</h4>
 
-      <div class="container flex-4">
-        <div class="card border border-dark" style="width: 30rem;">
-          <img class="card-img-top card-image rounded mx-auto d-block p-2" src="img/vector.png" alt="Card image cap">
-          <div class="card-body">
-            <!-- <p class="card-text text-center">มันสำปะหลัง</p> -->
-            <a href="/inputCassava" class="btn stretched-link rounded mx-auto d-block">คำนวณปุ๋ยมันสำปะหลังตามค่าวิเคราะห์ดิน</a>
-          </div>
-        </div>
+      <div class="container center flex-4">
   
         <div class="card border border-dark" style="width: 30rem;">
           <img class="card-img-top card-image rounded mx-auto d-block p-2" src="img/dirt.png" alt="Card image cap">
@@ -64,9 +57,22 @@
             </div>
           </div>
       </div>
-      <button type="button" class="btn btn-lg btn-block rounded mx-auto d-block" style="background-color: rgb(242, 187, 46); margin-bottom: 1em">
-          <a href="/home" style="text-decoration: none; color: rgb(33, 33, 33);"> <- ย้อนกลับ </a>
+      <br>
+      <div style="display: flex; justify-content: center;">
+        <button onclick="goBack()" type="button" class="btn btn-lg rounded" style="background-color: rgb(242, 187, 46); margin-right: 0.5em;">
+          <a style="text-decoration: none; color: rgb(33, 33, 33);"> <- ย้อนกลับ </a>
         </button>
+        <script>
+          function goBack() {
+            window.history.back();
+          }
+        </script>
+      
+        <button type="button" class="btn btn-lg rounded" style="background-color: #2e9df2; margin-left: 0.5em;">
+          <a href="/"  style="text-decoration: none; color: rgb(33, 33, 33);"> หน้าแรก </a>
+        </button>
+      </div>
+      <br>
     </div>
   </div>
 </body>

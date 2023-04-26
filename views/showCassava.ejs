@@ -20,10 +20,10 @@
           <div class="col-sm border p-1 border-dark bg-secondary">
             ขั้นตอนที่ 2
           </div>
-          <div class="col-sm border p-1 border-dark bg-secondary">
+          <div class="col-sm border p-1 border-dark" style="background-color: rgb(235, 128, 46);">
             ขั้นตอนที่ 3
           </div>
-          <div class="col-sm border p-1 border-dark" style="background-color: rgb(235, 128, 46);">
+          <div class="col-sm border p-1 border-dark">
             ขั้นตอนที่ 4
           </div>
         </div>
@@ -73,12 +73,18 @@
         <div class="container flex green" style="border-radius: 10px;">
           <div class="card border border-0 green" style="width: 22rem;">
             <br>
+            <br>
             <p class="text-center">การเตรียมปุ๋ยจาก</p>
             <div class="container text-center" style="width: 50%;">
               <div class="row yellow">
                 
                 <div class="w-100"></div>
                 
+                <div class="col text-black border">N</div>
+                <div class="col text-black border">P</div>
+                <div class="col text-black border">K</div>
+                <div class="w-100"></div>
+
                 <div class="col text-danger border"><%= Number(nn) %></div>
                 <div class="col text-danger border"><%= Number(np) %></div>
                 <div class="col text-danger border"><%= Number(nk) %></div>
@@ -155,50 +161,6 @@
               <br>
             </div>
           </div> 
-          
-          <div class="card border border-0 green" style="width: 20rem;">
-            
-            <div class="container text-center" style="width: 50%;">
-              <br><br>
-              <div class="row" style="background-color: whitesmoke;">
-                
-                <div class="col border">
-                  <% var sum1 = plot1*(price1/50) %>
-
-                  <%- sum1 %>
-                  
-                </div>
-                <div class="col border">บาท</div>
-                <div class="w-100"></div>
-                
-                <div class="col border">
-                  <% var sum2 = plot2*(price2/50) %>
-
-                  <%- sum2 %>
-
-                </div>
-                <div class="col border">บาท</div>
-                <div class="w-100"></div>
-                
-                <div class="col border">
-                  <% var sum3 = plot3*(price3/50) %>
-
-                  <%- sum3 %>
-
-                </div>
-                <div class="col border">บาท</div>
-
-                <div class="col text-success border">
-                  <% var sumAll = sum1+sum2+sum3 %>
-                  
-                  <%- sumAll %>
-
-                </div>
-                <div class="col text-success border">บาท</div>
-              </div>
-              <div><br></div>
-            </div>
-          </div>
         </div> 
 
         <div class="container flex">
@@ -209,16 +171,19 @@
               <div class="text-center">
                 <p class=""><%= nn %> - <%= np %> - <%= nk %>&emsp;เป็นเงิน&emsp;
                   <%= Number(sum1)%>
-                </p>
+                บาท</p>
                 <p class=""><%= pn %> - <%= pp %> - <%= pk %>&emsp;เป็นเงิน&emsp;
                   <%= Number(sum2) %>
-                </p>
+                บาท</p>
                 <p class=""><%= kn %> - <%= kp %> - <%= kk %>&emsp;เป็นเงิน&emsp;
                   <%= Number(sum3) %>
-                </p>
+                บาท</p>
                 <p>รวมเป็นเงิน 
+                  <% var sum1 = plot1*(price1/50) %>
+                  <% var sum2 = plot2*(price2/50) %>
+                  <% var sum3 = plot3*(price3/50) %>
                   <%= Number(sum1)+Number(sum2)+Number(sum3) %>
-                </p>
+                บาท</p>
                 <p>
                  
                   <%- parseFloat((Number(sum1)+Number(sum2)+Number(sum3))/(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %> 
@@ -228,19 +193,29 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
-    <br>
-    <button onclick="goBack()" type="button" class="btn btn-lg btn-block rounded mx-auto d-block" style="background-color: rgb(242, 187, 46); margin-bottom: 1em">
+
+    <div style="display: flex; justify-content: center;">
+      <button onclick="goBack()" type="button" class="btn btn-lg rounded" style="background-color: rgb(242, 187, 46); margin-right: 0.5em;">
         <a style="text-decoration: none; color: rgb(33, 33, 33);"> <- ย้อนกลับ </a>
       </button>
       <script>
-          function goBack() {
+        function goBack() {
           window.history.back();
-          }
+        }
       </script>
+    
+      <button type="button" class="btn btn-lg rounded" style="background-color: #2e9df2; margin-left: 0.5em; margin-right: 0.5em;">
+        <a href="/"  style="text-decoration: none; color: rgb(33, 33, 33);"> หน้าแรก </a>
+      </button>
+
+      <button type="button" class="btn btn-lg rounded" style="background-color: rgb(242, 187, 46); margin-left: 0.5em;">
+        <a href="/cassava" style="text-decoration: none; color: rgb(33, 33, 33);"> ต่อไป -> </a>
+      </button>
+    </div>
+    <br>
   </div>
 </body>
 
