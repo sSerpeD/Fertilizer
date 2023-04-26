@@ -28,172 +28,176 @@
           </div>
         </div>
     </div>
-    <div class="container">
-      <br>
-      <h3 class="text-center">คำแนะนำ</h3>
-      <br>
-      <% if(pH<5.0){ %>
-        <p>ค่าความเป็นกรด &emsp; pH <%= pH %> &ensp; คำแนะนำ <label class="bg-warning">ดินเป็นกรด-ควรใส่ปูนขาวหรือวัสดุปูน อัตรา50กก./ไร่ โดยโรยข้างแถวแล้วกลบ</label></p>
-      <% }else if(pH>=5.0 && pH<=6.5){ %>
-        <p>ค่าความเป็นกรด &emsp; pH <%= pH %> &ensp; คำแนะนำ <label class="bg-success">ความเป็นกรด-ด่าง เหมาะสม</label></p>
-      <% }else{ %>
-        <p>ค่าความเป็นกรด &emsp; pH <%= pH %> &ensp; คำแนะนำ <label class="bg-warning">ดินด่างแนะนำให้ใช้ปุ๋ย 21-0-0</label></p>
-      <% } %>
-      <p>คำแนะนำปุ๋ยตามค่าวิเคราะห์ดิน</p>
+    <div class="rounded mx-auto d-block p-2 text-center" style="max-width: 700px;">
       <div class="container">
-        <div class="text-center">
-          <label>คำแนะนำ</label>
-          <div class="row text-center">
-            <div class="col" style="width: 25%;"></div>
-            <div class="col border border-1 red" style="width: 25%;">N</div>
-            <div class="col border border-1 green" style="width: 25%;">P2O5</div>
-            <div class="col border border-1 yellow" style="width: 25%;">K2O</div>
-          </div>
-          <div class="row text-center">
-            <div class="col">
-              ปุ๋ยตามค่าวิเคราะห์ดิน
-            </div>
-            <div class="col border red">
-              <% const N = oM < 0.6 ? 16 : oM < 1.0 ? 16 : oM < 2.0 ? 8 : 4 %>
-              <%- N %>
-            </div>
-            <div class="col border green">
-              <% const P2O5 = P < 5 ? 8 : P < 30 ? 4 : 2 %>
-              <%- P2O5 %>
-            </div>
-            <div class="col border yellow">
-              <% const K2O = K < 30 ? 16 : K < 90 ? 8 : 4 %>
-              <%- K2O %>
-            </div>
-          </div>
-        </div>
-
         <br>
-
-        <div class="container flex green" style="border-radius: 10px;">
-          <div class="card border border-0 green" style="width: 22rem;">
-            <br>
-            <br>
-            <p class="text-center">การเตรียมปุ๋ยจาก</p>
-            <div class="container text-center" style="width: 50%;">
-              <div class="row yellow">
-                
-                <div class="w-100"></div>
-                
-                <div class="col text-black border">N</div>
-                <div class="col text-black border">P</div>
-                <div class="col text-black border">K</div>
-                <div class="w-100"></div>
-
-                <div class="col text-danger border"><%= Number(nn) %></div>
-                <div class="col text-danger border"><%= Number(np) %></div>
-                <div class="col text-danger border"><%= Number(nk) %></div>
-                <div class="w-100"></div>
-                
-                <div class="col text-danger border"><%= Number(pn) %></div>
-                <div class="col text-danger border"><%= Number(pp) %></div>
-                <div class="col text-danger border"><%= Number(pk) %></div>
-                <div class="w-100"></div>
-                
-                <div class="col text-danger border"><%= Number(kn) %></div>
-                <div class="col text-danger border"><%= Number(kp) %></div>
-                <div class="col text-danger border"><%= Number(kk) %></div>
+        <h3 class="text-center">คำแนะนำ</h3>
+        <br>
+        <% if(pH<5.0){ %>
+          <p>ค่าความเป็นกรด &emsp; pH <%= pH %> &ensp; คำแนะนำ <label class="bg-warning">ดินเป็นกรด-ควรใส่ปูนขาวหรือวัสดุปูน อัตรา50กก./ไร่ โดยโรยข้างแถวแล้วกลบ</label></p>
+        <% }else if(pH>=5.0 && pH<=6.5){ %>
+          <p>ค่าความเป็นกรด &emsp; pH <%= pH %> &ensp; คำแนะนำ <label class="bg-success">ความเป็นกรด-ด่าง เหมาะสม</label></p>
+        <% }else{ %>
+          <p>ค่าความเป็นกรด &emsp; pH <%= pH %> &ensp; คำแนะนำ <label class="bg-warning">ดินด่างแนะนำให้ใช้ปุ๋ย 21-0-0</label></p>
+        <% } %>
+        <p>คำแนะนำปุ๋ยตามค่าวิเคราะห์ดิน</p>
+        <div class="container"">
+          <div class="text-center mx-auto d-block" style="max-width: 400px;">
+            <label>คำแนะนำ</label>
+            <div class="row text-center" style="font-weight: 500;" >
+              <div class="col" style="width: 20%;"></div>
+              <div class="col border border-1 red" style="width: 20%;">N</div>
+              <div class="col border border-1 green" style="width: 20%;">P2O5</div>
+              <div class="col border border-1 yellow" style="width: 20%;">K2O</div>
+            </div>
+            <div class="row text-center">
+              <div class="col" style="width: 20%;">
+                ปุ๋ยตามค่าวิเคราะห์ดิน
+              </div>
+              <div class="col border red" style="width: 20%;">
+                <% const N = oM < 0.6 ? 16 : oM < 1.0 ? 16 : oM < 2.0 ? 8 : 4 %>
+                <%- N %>
+              </div>
+              <div class="col border green" style="width: 20%;">
+                <% const P2O5 = P < 5 ? 8 : P < 30 ? 4 : 2 %>
+                <%- P2O5 %>
+              </div>
+              <div class="col border yellow" style="width: 20%;">
+                <% const K2O = K < 30 ? 16 : K < 90 ? 8 : 4 %>
+                <%- K2O %>
               </div>
             </div>
           </div>
+  
+          <br>
           
-          <div class="card border border-0 green" style="width: 22rem;">
-            <br>
-            <p class="text-center">การชั่งปุ๋ย</p>
-            <p class="text-center">พื้นที่&emsp;<%= rai %> ไร่ <%= ngan %> งาน <%= squareWa %> ตารางวา</p>
-            <div class="container text-center" style="width: 50%;">
-              <div class="row" style="background-color: white;">
-                
-                <div class="col text-black border">กก./ไร่</div>
-                <div class="col text-black border">แปลง</div>
-                <div class="w-100"></div>
-
-                <div class="col text-success border">
-                  
-                  <% const pRai = P2O5*100/pp < 0 ? "ปุ๋ยเกิน" : parseFloat(P2O5*100/pp).toFixed() %>
-                  <% const nRai = (N/2)-(pRai*pn)/100 < 0 ? "ปุ๋ยเกิน" : parseFloat(((N/2)-(pRai*pn)/100)*100/pp).toFixed() %>
-                  
-                  <%= nRai %>
-
-                </div>
-                <div class="col text-black border">
-                  
-                  <% const plot1 = nRai == "ปุ๋ยเกิน" ? "ปุ๋ยเกิน" : parseFloat(nRai*(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %>
-                  
-                  <%- plot1 %>
-
-                </div>
-                <div class="w-100"></div>
-                
-                <div class="col text-success border">
-
-                  <%= pRai %>
-
-                </div>
-                <div class="col text-black border">
-
-                  <% const plot2 = pRai == "ปุ๋ยเกิน" ? "ปุ๋ยเกิน" : parseFloat(pRai*(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %>
-                  
-                  <%- plot2 %>
-                
-                </div>
-                <div class="w-100"></div>
-                
-                <div class="col text-success border">
-                  <% var kRai = parseFloat((K2O-pRai*(pk/100))*100/kk).toFixed() %>
-                  
-                  <%- kRai %>
-                  
-                </div>
-                <div class="col text-black border">
-
-                  <% const plot3 = kRai == "ปุ๋ยเกิน" ? "ปุ๋ยเกิน" : parseFloat(kRai*(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %>
-                  
-                  <%- plot3 %>
-                
+          <div class="mx-auto d-block p-2" style="max-width: 400px">
+            <div class="container flex green" style="border-radius: 10px;">
+              <div class="card border border-0 green" style="width: 22rem;">
+                <br>
+                <p class="text-center">การเตรียมปุ๋ยจาก</p>
+                <div class="container text-center" style="width: 50%;">
+                  <div class="row yellow">
+                    
+                    <div class="w-100"></div>
+                    
+                    <div class="col text-black border">N</div>
+                    <div class="col text-black border">P</div>
+                    <div class="col text-black border">K</div>
+                    <div class="w-100"></div>
+    
+                    <div class="col text-danger border"><%= Number(nn) %></div>
+                    <div class="col text-danger border"><%= Number(np) %></div>
+                    <div class="col text-danger border"><%= Number(nk) %></div>
+                    <div class="w-100"></div>
+                    
+                    <div class="col text-danger border"><%= Number(pn) %></div>
+                    <div class="col text-danger border"><%= Number(pp) %></div>
+                    <div class="col text-danger border"><%= Number(pk) %></div>
+                    <div class="w-100"></div>
+                    
+                    <div class="col text-danger border"><%= Number(kn) %></div>
+                    <div class="col text-danger border"><%= Number(kp) %></div>
+                    <div class="col text-danger border"><%= Number(kk) %></div>
+                  </div>
                 </div>
               </div>
-              <br>
-            </div>
-          </div> 
-        </div> 
-
-        <div class="container flex">
-          <div class="card border border-dark" style="width: 20rem;">
-            <div class="card-body">
-              <p class="">รวมพื้นที่&emsp;<%= rai %> ไร่ <%= ngan %> งาน <%= squareWa %> ตารางวา</p>
-              <p>จ่ายค่าปุ๋ย</p>
-              <div class="text-center">
-                <p class=""><%= nn %> - <%= np %> - <%= nk %>&emsp;เป็นเงิน&emsp;
-                  <%= Number(sum1)%>
-                บาท</p>
-                <p class=""><%= pn %> - <%= pp %> - <%= pk %>&emsp;เป็นเงิน&emsp;
-                  <%= Number(sum2) %>
-                บาท</p>
-                <p class=""><%= kn %> - <%= kp %> - <%= kk %>&emsp;เป็นเงิน&emsp;
-                  <%= Number(sum3) %>
-                บาท</p>
-                <p>รวมเป็นเงิน 
-                  <% var sum1 = plot1*(price1/50) %>
-                  <% var sum2 = plot2*(price2/50) %>
-                  <% var sum3 = plot3*(price3/50) %>
-                  <%= Number(sum1)+Number(sum2)+Number(sum3) %>
-                บาท</p>
-                <p>
-                 
-                  <%- parseFloat((Number(sum1)+Number(sum2)+Number(sum3))/(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %> 
-                  
-                  บาทต่อไร่</p>
+              
+              <div class="card border border-0 green" style="width: 22rem;">
+                <br>
+                <p class="text-center">การชั่งปุ๋ย</p>
+                <p class="text-center">พื้นที่&emsp;<%= rai %> ไร่ <%= ngan %> งาน <%= squareWa %> ตารางวา</p>
+                <div class="container text-center" style="width: 50%;">
+                  <div class="row" style="background-color: white;">
+                    
+                    <div class="col text-black border">กก./ไร่</div>
+                    <div class="col text-black border">แปลง</div>
+                    <div class="w-100"></div>
+    
+                    <div class="col text-success border">
+                      
+                      <% const pRai = P2O5*100/pp < 0 ? "ปุ๋ยเกิน" : parseFloat(P2O5*100/pp).toFixed() %>
+                      <% const nRai = (N/2)-(pRai*pn)/100 < 0 ? "ปุ๋ยเกิน" : parseFloat(((N/2)-(pRai*pn)/100)*100/pp).toFixed() %>
+                      
+                      <%= nRai %>
+    
+                    </div>
+                    <div class="col text-black border">
+                      
+                      <% const plot1 = nRai == "ปุ๋ยเกิน" ? "ปุ๋ยเกิน" : parseFloat(nRai*(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %>
+                      
+                      <%- plot1 %>
+    
+                    </div>
+                    <div class="w-100"></div>
+                    
+                    <div class="col text-success border">
+    
+                      <%= pRai %>
+    
+                    </div>
+                    <div class="col text-black border">
+    
+                      <% const plot2 = pRai == "ปุ๋ยเกิน" ? "ปุ๋ยเกิน" : parseFloat(pRai*(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %>
+                      
+                      <%- plot2 %>
+                    
+                    </div>
+                    <div class="w-100"></div>
+                    
+                    <div class="col text-success border">
+                      <% var kRai = parseFloat((K2O-pRai*(pk/100))*100/kk).toFixed() %>
+                      
+                      <%- kRai %>
+                      
+                    </div>
+                    <div class="col text-black border">
+    
+                      <% const plot3 = kRai == "ปุ๋ยเกิน" ? "ปุ๋ยเกิน" : parseFloat(kRai*(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %>
+                      
+                      <%- plot3 %>
+                    
+                    </div>
+                  </div>
+                  <br>
+                </div>
+              </div> 
+            </div> 
+          </div>
+  
+          <div class="container flex">
+            <div class="card border border-dark" style="width: 20rem;">
+              <div class="card-body">
+                <p class="">รวมพื้นที่&emsp;<%= rai %> ไร่ <%= ngan %> งาน <%= squareWa %> ตารางวา</p>
+                <p>จ่ายค่าปุ๋ย</p>
+                <div class="text-center">
+                  <p class=""><%= nn %> - <%= np %> - <%= nk %>&emsp;เป็นเงิน&emsp;
+                    <%= Number(sum1)%>
+                  บาท</p>
+                  <p class=""><%= pn %> - <%= pp %> - <%= pk %>&emsp;เป็นเงิน&emsp;
+                    <%= Number(sum2) %>
+                  บาท</p>
+                  <p class=""><%= kn %> - <%= kp %> - <%= kk %>&emsp;เป็นเงิน&emsp;
+                    <%= Number(sum3) %>
+                  บาท</p>
+                  <p>รวมเป็นเงิน 
+                    <% var sum1 = plot1*(price1/50) %>
+                    <% var sum2 = plot2*(price2/50) %>
+                    <% var sum3 = plot3*(price3/50) %>
+                    <%= Number(sum1)+Number(sum2)+Number(sum3) %>
+                  บาท</p>
+                  <p>
+                   
+                    <%- parseFloat((Number(sum1)+Number(sum2)+Number(sum3))/(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %> 
+                    
+                    บาทต่อไร่</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
 
 
