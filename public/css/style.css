@@ -64,7 +64,7 @@ html,body {
 }
 
 .yellow {
-    background-color: rgb(235, 173, 79);
+    background-color: rgb(235, 173, 79) !important;
 }
 .red {
     background-color: rgb(203, 103, 103);

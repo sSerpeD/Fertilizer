@@ -34,141 +34,169 @@
           </div>
         </div>
     </div>
+    <br>
 
     <div class="container">
 
       <br>
-      <div class="card border border-dark rounded mx-auto d-block p-2" style="width: auto">
+      <div class="card border border-dark rounded mx-auto d-block p-2" style="max-width: 525px;">
         <div class="card-body">
 
           <h3 class="text-center">ค่าวิเคราะห์ดิน</h3>
           <br>
-          <form method="GET" action="/showCassava">
-            <div class="form-group">
-              <div class="row text-center" style="background-color:rgb(138, 193, 93);">
-                <div class="col border border-1" style="width: 25%;">ph</div>
-                <div class="col border border-1" style="width: 25%;">OM %</div>
-                <div class="col border border-1" style="width: 25%;">P (mg/kg)</div>
-                <div class="col border border-1" style="width: 25%;">K (mg/kg)</div>
-              </div>
-              <div class="row text-center yellow">
-                <div class="col border" style="width: 25%;">
-                  <input type="number" step="any" class="form-control border-gone yellow" name="pH" placeholder="เลข">
-                </div>
-                <div class="col border" style="width: 25%;">
-                  <input type="number" step="any" class="form-control border-gone yellow" name="oM" placeholder="เลข">
-                </div>
-                <div class="col border" style="width: 25%;">
-                  <input type="number" step="any" class="form-control border-gone yellow" name="available_P" placeholder="เลข">
-                </div>
-                <div class="col border" style="width: 25%;">
-                  <input type="number" step="any" class="form-control border-gone yellow" name="ex_K" placeholder="เลข">
-                </div>
-              </div>
-              <br>
-              <div class="row text-center">
-                <div class="col" style="width: 25%;">
-                  <label>พื้นที่ปลูก</label>
-                </div>
-                <div class="col" style="width: 25%;">
-                  <input type="number" class="form-control yellow" name="rai" placeholder="ไร่">
-                </div>
-                <div class="col" style="width: 25%;">
-                  <input type="number" class="form-control yellow" name="ngan" placeholder="งาน">
-                </div>
-                <div class="col" style="width: 25%;">
-                  <input type="number" class="form-control yellow" name="squareWa" placeholder="ตารางวา">
-                </div>
-              </div>
-              <br>
-
-              <div class="container">
-                <div class="row text-center" style="background-color:rgb(138, 193, 93);">
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 " style="background-color: white;"></div>
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">N</div>
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">P</div>
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">K</div>
+          <div style="margin-left: auto; margin-right: auto;">
+            <form method="GET" action="/showCassava">
+              <div class="form-group">
+                <div class="row text-center" style="background-color:rgb(138, 193, 93); font-weight: 500;">
+                    <div class="col border border-1" style="width: 25%;">ph</div>
+                    <div class="col border border-1" style="width: 25%;">OM %</div>
+                    <div class="col border border-1" style="width: 25%;">P (mg/kg)</div>
+                    <div class="col border border-1" style="width: 25%;">K (mg/kg)</div>
                 </div>
                 <div class="row text-center yellow">
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 border border-0" style="background-color: white;">ไนโตรเจน</div>
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">
-                    <input type="number" class="form-control border-gone yellow" name="nn" placeholder="เลข">
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">
-                    <input type="number" class="form-control border-gone yellow" name="np" placeholder="เลข">
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 border text-end"> 
-                    <input type="number" class="form-control border-gone yellow" name="nk" placeholder="เลข"> 
-                  </div>
+                    <div class="col border" style="width: 25%;">
+                        <input type="number" step="any" class="form-control border-gone yellow text-center" name="pH" placeholder="เลข">
+                    </div>
+                    <div class="col border" style="width: 25%;">
+                        <input type="number" step="any" class="form-control border-gone yellow text-center" name="oM" placeholder="เลข">
+                    </div>
+                    <div class="col border" style="width: 25%;">
+                        <input type="number" step="any" class="form-control border-gone yellow text-center" name="available_P" placeholder="เลข">
+                    </div>
+                    <div class="col border" style="width: 25%;">
+                        <input type="number" step="any" class="form-control border-gone yellow text-center" name="ex_K" placeholder="เลข">
+                    </div>
                 </div>
-                <div class="row text-center yellow">
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-sm-center" style="background-color: white;">ฟอสฟอรัส</div>
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">
-                    <input type="number" class="form-control border-gone yellow" name="pn"  placeholder="เลข">
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">
-                    <input type="number" class="form-control border-gone yellow" name="pp"  placeholder="เลข">
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 border text-end"> 
-                    <input type="number" class="form-control border-gone yellow" name="pk"  placeholder="เลข"> 
-                  </div>
-                </div>
-                <div class="row text-center yellow">
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 " style="background-color: white;">โพแทสเซียม</div>
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">
-                    <input type="number" class="form-control border-gone yellow" name="kn"  placeholder="เลข">
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">
-                    <input type="number" class="form-control border-gone yellow" name="kp"  placeholder="เลข">
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-3 border text-end"> 
-                    <input type="number" class="form-control border-gone yellow" name="kk"  placeholder="เลข"> 
-                  </div>
-                </div>
-              </div>
-              <br>
-
-              <div class="container text-center" style="max-width: 85%;">
-                <div class="row">
-                  <div class="col text-end">ราคา</div>
-                  <div class="col">
-                    <input type="number" class="form-control border yellow" name="price1" > 
-                  </div>
-                  <div class="col text-start">บาท/กระสอบ</div>
-                  <div class="w-100"></div>
-                  <div class="col text-end">ราคา</div>
-                  <div class="col">
-                    <input type="number" class="form-control border yellow" name="price2" > 
-                  </div>
-                  <div class="col text-start">บาท/กระสอบ</div>
-                  <div class="w-100"></div>
-                  <div class="col text-end">ราคา</div>
-                  <div class="col">
-                    <input type="number" class="form-control border yellow" name="price3" > 
-                  </div>
-                  <div class="col text-start">บาท/กระสอบ</div>
-                </div>
-              </div>
-
             </div>
+            
+                <br>
+                <div style=" max-width: 400px; margin-left: auto; margin-right: auto;">
+                  <div class="row text-center">
+                    <div style="width: 12%;">
+                        <label class="text-right">พื้นที่ปลูก</label>
+                    </div>
+                    <div class="col" style="width: 12%; position: relative;">
+                        <input type="number" class="form-control yellow" name="rai" style="width: 70%; margin-left: 10px;">
+                        <span class="placeholder" style="margin-left: 10px;">ไร่</span>
+                    </div>
+                    <div class="col" style="width: 12%; position: relative;">
+                        <input type="number" class="form-control yellow" name="ngan" style="width: 70%; margin-left: 10px;">
+                        <span class="placeholder" style="margin-left: 10px;">งาน</span>
+                    </div>
+                    <div class="col" style="width: 12%; position: relative;">
+                        <input type="number" class="form-control yellow" name="squareWa" style="width: 70%; margin-left: 10px;">
+                        <span class="placeholder" style="margin-left: 10px;">ตรว.</span>
+                    </div>
+                </div>
+                
+                  <style>
+                  .placeholder {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 90px;
+                    font-size: 1em;
+                    color: gray;
+                  }
+                  @media screen and (max-width: 600px) {
+                    .placeholder {
+                        left: 70px;
+                    }
+                  }
+                  </style>
+                </div>
+                
+                <br>
+  
+                <div class="container">
+                  <div class="row text-center" style="background-color:rgb(138, 193, 93); font-weight: 600;">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 " style="background-color: white;"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">N</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">P</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">K</div>
+                  </div>
+                  <div class="row text-center yellow">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 border border-0" style="background-color: white;">ไนโตรเจน</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">
+                      <input type="number" class="form-control border-gone yellow text-center" value="0" name="nn" placeholder="เลข">
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">
+                      <input type="number" class="form-control border-gone yellow text-center" value="0" name="np" placeholder="เลข">
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 border text-end"> 
+                      <input type="number" class="form-control border-gone yellow text-center" value="0" name="nk" placeholder="เลข"> 
+                    </div>
+                  </div>
+                  <div class="row text-center yellow">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-sm-center" style="background-color: white;">ฟอสฟอรัส</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">
+                      <input type="number" class="form-control border-gone yellow text-center" value="0" name="pn"  placeholder="เลข">
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">
+                      <input type="number" class="form-control border-gone yellow text-center" value="0" name="pp"  placeholder="เลข">
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 border text-end"> 
+                      <input type="number" class="form-control border-gone yellow text-center" value="0" name="pk"  placeholder="เลข"> 
+                    </div>
+                  </div>
+                  <div class="row text-center yellow">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 " style="background-color: white;">โพแทสเซียม</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">
+                      <input type="number" class="form-control border-gone yellow text-center" value="0" name="kn"  placeholder="เลข">
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 border">
+                      <input type="number" class="form-control border-gone yellow text-center" value="0" name="kp"  placeholder="เลข">
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 border text-end"> 
+                      <input type="number" class="form-control border-gone yellow text-center" value="0" name="kk"  placeholder="เลข"> 
+                    </div>
+                  </div>
+                </div>
+                <br>
+  
+                <div class="container text-center" style="max-width: 85%;">
+                  <div class="row">
+                    <div class="col text-end">ราคา</div>
+                    <div class="col">
+                      <input type="number" class="form-control border yellow" name="price1" > 
+                    </div>
+                    <div class="col text-start">บาท/กระสอบ</div>
+                    <div class="w-100"></div>
+                    <div class="col text-end">ราคา</div>
+                    <div class="col">
+                      <input type="number" class="form-control border yellow" name="price2" > 
+                    </div>
+                    <div class="col text-start">บาท/กระสอบ</div>
+                    <div class="w-100"></div>
+                    <div class="col text-end">ราคา</div>
+                    <div class="col">
+                      <input type="number" class="form-control border yellow" name="price3" > 
+                    </div>
+                    <div class="col text-start">บาท/กระสอบ</div>
+                  </div>
+                </div>
+  
+              </div>
+  
+              <br>
+              <button type="submit" class="btn btn-primary btn-block rounded mx-auto d-block">Submit</button>
+            </form>
 
-            <br>
-            <button type="submit" class="btn btn-primary btn-block rounded mx-auto d-block">Submit</button>
-          </form>
+          </div>
           
         </div>
       </div>
-
+      <br>
+      <button onclick="goBack()" type="button" class="btn btn-lg btn-block rounded mx-auto d-block" style="background-color: rgb(242, 187, 46); margin-bottom: 1em">
+        <a style="text-decoration: none; color: rgb(33, 33, 33);"> <- ย้อนกลับ </a>
+      </button>
+      <script>
+          function goBack() {
+          window.history.back();
+          }
+      </script>
     </div>
     <br>
-    <button onclick="goBack()" type="button" class="btn btn-lg btn-block rounded mx-auto d-block" style="background-color: rgb(242, 187, 46); margin-bottom: 1em">
-      <a style="text-decoration: none; color: rgb(33, 33, 33);"> <- ย้อนกลับ </a>
-    </button>
-    <script>
-        function goBack() {
-        window.history.back();
-        }
-    </script>
 
   </div>
 </body>
