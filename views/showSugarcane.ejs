@@ -42,6 +42,31 @@
       <p>คำแนะนำปุ๋ยตามค่าวิเคราะห์ดิน</p>
       <div class="container">
         <div class="text-center rounded mx-auto d-block" style="max-width: 400px;">
+
+          <% if(check){ %>
+            <div class="row text-center">
+              <div class="col" style="width: 25%;"></div>
+              <div class="col border border-1 red" style="width: 25%;">N</div>
+              <div class="col border border-1 green" style="width: 25%;">P2O5</div>
+              <div class="col border border-1 yellow" style="width: 25%;">K2O</div>
+            </div>
+            <div class="row text-center">
+              <div class="col">
+                ปุ๋ยก่อนค่าวิเคราะห์ดิน
+              </div>
+              <div class="col border red">
+                <%- ferN %>
+              </div>
+              <div class="col border green">
+                <%- ferP %>
+              </div>
+              <div class="col border yellow">
+                <%- ferK %>
+              </div>
+            </div>
+          <% } %>
+          <br>
+
           <label>คำแนะนำ</label>
           <div class="row text-center">
             <div class="col" style="width: 25%;"></div>
@@ -96,11 +121,13 @@
         <br>
         <br>
 
-        <div class="container flex green" style="border-radius: 10px;">
+        <div class="container flex green" style="border-radius: 10px; max-width: 750px;">
           <div class="card border border-0 green" style="width: 22rem;">
             <% if(!check){ %>
               <p class="bg-warning text-center rounded" >ครั้งที่ 1</p>
-            <% } %>
+            <% } else { %>
+              <br>
+              <% } %>
             <p class="text-center">การเตรียมปุ๋ยจาก</p>
             <div class="container text-center" style="width: 50%;">
               <div class="row yellow">
