@@ -72,3 +72,9 @@ html,body {
 .green {
     background-color: rgb(128, 184, 104);
 }
+
+#myNumberInput::-webkit-outer-spin-button,
+#myNumberInput::-webkit-inner-spin-button {
+  display: none;
+}
+
