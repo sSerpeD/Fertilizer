@@ -172,22 +172,20 @@
                   <p>จ่ายค่าปุ๋ย</p>
                   <div class="text-center">
                     <p class=""><%= nn %> - <%= np %> - <%= nk %>&emsp;เป็นเงิน&emsp;
-                      <%= Number(sum1)%>
-                    </p>
+                    <%= Number(sum1)%>
+                    บาท</p>
                     <p class=""><%= pn %> - <%= pp %> - <%= pk %>&emsp;เป็นเงิน&emsp;
-                      <%= Number(sum2) %>
-                    </p>
+                    <%= Number(sum2) %>
+                    บาท</p>
                     <p class=""><%= kn %> - <%= kp %> - <%= kk %>&emsp;เป็นเงิน&emsp;
-                      <%= Number(sum3) %>
-                    </p>
+                    <%= Number(sum3) %>
+                    บาท</p>
                     <p>รวมเป็นเงิน 
-                      <%= Number(sum1)+Number(sum2)+Number(sum3) %>
-                    </p>
+                    <%= Number(sum1)+Number(sum2)+Number(sum3) %>
+                    บาท</p>
                     <p>
-                    
-                      <%- parseFloat((Number(sum1)+Number(sum2)+Number(sum3))/(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %> 
-                      
-                      บาทต่อไร่</p>
+                    <%- parseFloat((Number(sum1)+Number(sum2)+Number(sum3))/(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %> 
+                    บาทต่อไร่</p>
                   </div>
                 </div>
               </div>

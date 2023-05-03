@@ -335,6 +335,7 @@
         <% const plot2_1 = nRai2 == "ปุ๋ยเกิน" ? "ปุ๋ยเกิน" : parseFloat(nRai2*(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %>
         <% var sum2_1 = plot2_1*(price1/50) %>
         <% var sumAll2 = sum2_1 %>
+        <% const ferCal = (ferRai*(Number(rai)+(ngan*0.25)+(squareWa/400)))*(ferPrice/50) %>
 
         <div class="container flex">
           <div class="card border border-dark" style="width: 20rem;">
@@ -342,37 +343,39 @@
               <p class="">รวมพื้นที่&emsp;<%= rai %> ไร่ <%= ngan %> งาน <%= squareWa %> ตารางวา</p>
               <p>จ่ายค่าปุ๋ย</p>
               <div class="text-center">
-                <p class=""><%= ferN %> - <%= ferP %> - <%= ferK %>&emsp;เป็นเงิน&emsp;
-                  <%- ferCal %>
-                </p>
+                <% if(check){ %>
+                  <p class=""><%= ferN %> - <%= ferP %> - <%= ferK %>&emsp;เป็นเงิน&emsp;
+                    <%- ferCal %>
+                  บาท</p>
+                <% } %>
                 <p class=""><%= nn %> - <%= np %> - <%= nk %>&emsp;เป็นเงิน&emsp;
                   <% if(!check){ %>
                     <%= Number(sum1) + Number(sum2_1) %>
                   <% }else{ %>
                     <%- checkSum1 %>
                   <% } %>
-                </p>
+                บาท</p>
                 <p class=""><%= pn %> - <%= pp %> - <%= pk %>&emsp;เป็นเงิน&emsp;
                   <% if(!check){ %>
                     <%= Number(sum2) %>
                   <% }else{ %>
                     <%- checkSum2 %>
                   <% } %>
-                </p>
+                บาท</p>
                 <p class=""><%= kn %> - <%= kp %> - <%= kk %>&emsp;เป็นเงิน&emsp;
                   <% if(!check){ %>
                     <%= Number(sum3) %>
                   <% }else{ %>
                     <%- checkSum3 %>
                   <% } %>
-                </p>
+                บาท</p>
                 <p>รวมเป็นเงิน 
                   <% if(!check){ %>
                     <%= Number(sum1)+Number(sum2_1)+Number(sum2)+Number(sum3) %>
                   <% }else{ %>
                     <%- Number(checkSumAll)+Number(ferCal) %>
                   <% } %>
-                </p>
+                บาท</p>
                 <p>
                   
                   <% if(!check){ %>
