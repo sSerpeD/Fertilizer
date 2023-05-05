@@ -167,10 +167,10 @@
 
                 <div class="col text-success border">
                   
-                  <% const pRai = P2O5*100/pp < 0 ? "ปุ๋ยเกิน" : parseFloat(P2O5*100/pp).toFixed() %>
-                  <% const nRai = (N/2)-(pRai*pn)/100 < 0 ? "ปุ๋ยเกิน" : parseFloat(((N/2)-(pRai*pn)/100)*100/pp).toFixed() %>
-                  <% const checkP = ((P2O5-(ferN*ferP/100))*100)/pp < 0 ? "ปุ๋ยเกิน" : parseFloat(((P2O5-(ferRai*ferP/100))*100)/pp).toFixed() %>
-                  <% const checkN = N-(ferRai*ferN/100)-(checkP*pn/100) < 0 ? "ปุ๋ยเกิน" : parseFloat((N-(ferRai*ferN/100)-(checkP*pn/100))*100/nn).toFixed() %>
+                  <% const pRai = P2O5*100/pp < 0 ? "ปุ๋ยเกิน" : parseFloat(P2O5*100/pp).toFixed(2) %>
+                  <% const nRai = (N/2)-(pRai*pn)/100 < 0 ? "ปุ๋ยเกิน" : parseFloat(((N/2)-(pRai*pn)/100)*100/pp).toFixed(2) %>
+                  <% const checkP = ((P2O5-(ferN*ferP/100))*100)/pp < 0 ? "ปุ๋ยเกิน" : parseFloat(((P2O5-(ferRai*ferP/100))*100)/pp).toFixed(2) %>
+                  <% const checkN = N-(ferRai*ferN/100)-(checkP*pn/100) < 0 ? "ปุ๋ยเกิน" : parseFloat((N-(ferRai*ferN/100)-(checkP*pn/100))*100/nn).toFixed(2) %>
 
                   <% if(!check){ %>
                     <%= nRai %>
@@ -350,38 +350,38 @@
                 <% } %>
                 <p class=""><%= nn %> - <%= np %> - <%= nk %>&emsp;เป็นเงิน&emsp;
                   <% if(!check){ %>
-                    <%= Number(sum1) + Number(sum2_1) %>
+                    <%= (Number(sum1) + Number(sum2_1)).toFixed(2) %>
                   <% }else{ %>
                     <%- checkSum1 %>
                   <% } %>
                 บาท</p>
                 <p class=""><%= pn %> - <%= pp %> - <%= pk %>&emsp;เป็นเงิน&emsp;
                   <% if(!check){ %>
-                    <%= Number(sum2) %>
+                    <%= Number(sum2).toFixed(2) %>
                   <% }else{ %>
-                    <%- checkSum2 %>
+                    <%- checkSum2.toFixed(2) %>
                   <% } %>
                 บาท</p>
                 <p class=""><%= kn %> - <%= kp %> - <%= kk %>&emsp;เป็นเงิน&emsp;
                   <% if(!check){ %>
-                    <%= Number(sum3) %>
+                    <%= Number(sum3).toFixed(2) %>
                   <% }else{ %>
-                    <%- checkSum3 %>
+                    <%- checkSum3.toFixed(2) %>
                   <% } %>
                 บาท</p>
                 <p>รวมเป็นเงิน 
                   <% if(!check){ %>
-                    <%= Number(sum1)+Number(sum2_1)+Number(sum2)+Number(sum3) %>
+                    <%= (Number(sum1)+Number(sum2_1)+Number(sum2)+Number(sum3)).toFixed(2) %>
                   <% }else{ %>
-                    <%- Number(checkSumAll)+Number(ferCal) %>
+                    <%- (Number(checkSumAll)+Number(ferCal)).toFixed(2) %>
                   <% } %>
                 บาท</p>
                 <p>
                   
                   <% if(!check){ %>
-                    <%- parseFloat((Number(sum1)+Number(sum2_1)+Number(sum2)+Number(sum3))/(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed() %> 
+                    <%- parseFloat((Number(sum1)+Number(sum2_1)+Number(sum2)+Number(sum3))/(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed(2) %> 
                     <% }else{ %>
-                    <%- (checkSumAll+Number(ferCal))/(Number(rai)+(ngan*0.25)+(squareWa/400)) %>
+                    <%- ((checkSumAll+Number(ferCal))/(Number(rai)+(ngan*0.25)+(squareWa/400))).toFixed(2) %>
                   <% } %>
                   
                   บาทต่อไร่</p>
